@@ -1013,14 +1013,6 @@ Public Class Form1
         Form4.leed = 0
         Form4.reed = 0
         Form4.zeed = 0
-        'Dim sb As StringBuilder = New StringBuilder
-        'sb.Append("arrival rate change=" + Form4.arrival_change.ToString())
-        'Using writeresult As StreamWriter = New StreamWriter("C:\Users\snasrol\Desktop\output\Results_GD_R_A-Lost Calls.txt", True)
-        'writeresult.WriteLine(sb.ToString())
-        'End Using
-        'Using writeresult As StreamWriter = New StreamWriter("C:\Users\snasrol\Desktop\output\Results_GD_R_A-Waiting Time.txt", True)
-        'writeresult.WriteLine(sb.ToString())
-        'End Using
         closer_amb_initialization()
         c_of_r.Clear()
         c_of_r_loss.Clear()
@@ -1042,9 +1034,6 @@ Public Class Form1
                 random_sample.Add(sr.ReadLine())
             End While
         End Using
-        ''simulate each state by using class form4
-        'Form4.input_read()
-
         Form4.r1 = New Random(Form4.seed)
         Form4.r2 = New Random(Form4.weed)
         Form4.r3 = New Random(Form4.leed)
@@ -1096,28 +1085,14 @@ Public Class Form1
             total_hp_call_nom_list.clear()
             total_lp_call_nom_list.clear()
             GoTo 3
-            'Else
-            'Dim best_sb As StringBuilder = New StringBuilder
-            'best_sb.Append(best_miss_call.Min())
-            'Using writeresult As StreamWriter = New StreamWriter("C:\Users\snasrol\Desktop\output\Results_GD_R_A-Lost Calls.txt", True)
-            'writeresult.WriteLine(best_sb.ToString())
-            'End Using
-            'best_sb = New StringBuilder
-            'best_sb.Append(best_resp_time.Min())
-            'Using writeresult As StreamWriter = New StreamWriter("C:\Users\snasrol\Desktop\output\Results_GD_R_A-Waiting Time.txt", True)
-            'writeresult.WriteLine(best_sb.ToString())
-            'End Using
-            'Form3.Show()
-            'Exit Sub
         End If
-        'Next
     End Sub
     Public Sub phi_path()
         If Me.CheckBox1.Checked = True Then
-            filepath = "C:\Users\snasrol\Desktop\output\Random Sample.txt"
+            filepath = "C:\output\Random Sample.txt"
         End If
         If Me.CheckBox2.Checked = True Then
-            filepath = "C:\Users\snasrol\Desktop\output\visited Sample.txt"
+            filepath = "C:\output\visited Sample.txt"
         End If
     End Sub
     Public Function nodes_to_regions(ByVal state As List(Of List(Of Integer)))
